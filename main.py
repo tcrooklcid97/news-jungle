@@ -724,3 +724,11 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
+import streamlit as st
+import torch
+import tensorflow as tf
+
+st.write(f"PyTorch installed: {torch.__version__}")
+st.write(f"TensorFlow installed: {tf.__version__}")
+
+from bias_analyzer import analyze_bias
