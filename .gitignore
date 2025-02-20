@@ -171,3 +171,14 @@ cython_debug/
 .pypirc
 .DS_Store
 .DS_Store
+# Ignore unnecessary files
+3.11/
+Create/
+Python/
+a/
+environment/
+new/
+using/
+virtual/
+.venv/ # Ignore virtual environment
+__pycache__/ # Ignore compiled Python files
