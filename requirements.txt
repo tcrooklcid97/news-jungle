@@ -8,3 +8,5 @@ requests>=2.31.0
 streamlit>=1.42.0
 trafilatura>=2.0.0
 twilio>=9.4.1
+transformers>=4.40.0
+
