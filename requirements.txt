@@ -10,7 +10,6 @@ trafilatura>=2.0.0
 twilio>=9.4.1
 transformers>=4.40.0
 torch>=2.2.0
-tensorflow>=2.15.0
 tf-keras
 tensorflow==2.14.0
 
