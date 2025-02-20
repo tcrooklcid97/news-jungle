@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="News Jungle",
+    page_icon="🌴",
+    layout="wide",
+    menu_items=None
+)
 # Simple authentication
 def authenticate():
     st.sidebar.header("Login")
@@ -24,12 +30,6 @@ import base64
 from chat_interface import display_chat_interface # Added import statement
 
 # Page config must be the first Streamlit command
-st.set_page_config(
-    page_title="News Jungle",
-    page_icon="🌴",
-    layout="wide",
-    menu_items=None
-)
 
 # Initialize and display chat interface # Added function call
 display_chat_interface()
