@@ -1,4 +1,24 @@
 import streamlit as st
+
+# Simple authentication
+def authenticate():
+    st.sidebar.header("Login")
+    password = st.sidebar.text_input("Enter Password:", type="password")
+    
+    if password == "Tc100573!":
+        return True
+    else:
+        st.sidebar.warning("Incorrect password. Access denied.")
+        return False
+
+if not authenticate():
+    st.stop()  # Stop the app if authentication fails
+
+# Main app content
+st.title("News Jungle")
+st.write("Welcome to the restricted News Jungle app!")
+
+import streamlit as st
 import json
 import base64
 from chat_interface import display_chat_interface # Added import statement
