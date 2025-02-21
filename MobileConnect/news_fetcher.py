@@ -80,3 +80,26 @@ def fetch_news(query: str, days_ago: int, source_count: int) -> List[Dict[str, A
         return unique_articles[:source_count]
 
     return []
+import requests
+
+def fetch_gdelt_news():
+    url = "https://api.gdeltproject.org/api/v2/doc/doc"
+    params = {
+        "query": "All",
+        "mode": "artlist",
+        "format": "json",
+        "timespan": "1440",
+        "sort": "DateDesc"
+    }
+
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("articles", [])
+    else:
+        print("Error fetching from GDELT:", response.status_code, response.text)
+        return []
+
+if __name__ == "__main__":
+    articles = fetch_gdelt_news()
+    print(articles[:5])
