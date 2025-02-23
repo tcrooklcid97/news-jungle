@@ -1,8 +1,12 @@
 # This file must be used with "source bin/activate" *from bash*
 # you cannot run it directly
 
+# Brief description:
+# This script activates the Python virtual environment by setting up the necessary environment variables
+# and modifying the shell prompt. It also defines a `deactivate` function to revert the changes.
+
 deactivate () {
-    # reset old environment variables
+    # Reset old environment variables
     if [ -n "${_OLD_VIRTUAL_PATH:-}" ] ; then
         PATH="${_OLD_VIRTUAL_PATH:-}"
         export PATH
@@ -27,34 +31,34 @@ deactivate () {
     unset VIRTUAL_ENV
     unset VIRTUAL_ENV_PROMPT
     if [ ! "${1:-}" = "nondestructive" ] ; then
-    # Self destruct!
+        # Self destruct!
         unset -f deactivate
     fi
 }
 
-# unset irrelevant variables
+# Unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV=/Users/Lenovo/Downloads/news_jungle_export/environment
+# Set up the virtual environment
+VIRTUAL_ENV="/Users/Lenovo/Downloads/news_jungle_export/environment"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
-PATH="$VIRTUAL_ENV/"bin":$PATH"
+PATH="$VIRTUAL_ENV/bin:$PATH"
 export PATH
 
-# unset PYTHONHOME if set
-# this will fail if PYTHONHOME is set to the empty string (which is bad anyway)
-# could use `if (set -u; : $PYTHONHOME) ;` in bash
+# Unset PYTHONHOME if set
 if [ -n "${PYTHONHOME:-}" ] ; then
     _OLD_VIRTUAL_PYTHONHOME="${PYTHONHOME:-}"
     unset PYTHONHOME
 fi
 
+# Modify the shell prompt to indicate the virtual environment is active
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1='(environment) '"${PS1:-}"
+    PS1="(environment) ${PS1:-}"
     export PS1
-    VIRTUAL_ENV_PROMPT='(environment) '
+    VIRTUAL_ENV_PROMPT="(environment) "
     export VIRTUAL_ENV_PROMPT
 fi
 

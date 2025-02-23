@@ -1,7 +1,7 @@
 [project]
-name = "repl-nix-workspace"
+name = "news-jungle"
 version = "0.1.0"
-description = "Add your description here"
+description = "A comprehensive news aggregation and exploration platform."
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.46.0",
@@ -15,3 +15,8 @@ dependencies = [
     "trafilatura>=2.0.0",
     "twilio>=9.4.5",
 ]
+
+# Optional: Add build system requirements if using Poetry or another build tool
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"

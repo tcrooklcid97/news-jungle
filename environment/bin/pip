@@ -1,8 +1,17 @@
 #!/Users/Lenovo/Downloads/news_jungle_export/environment/bin/python3.11
 # -*- coding: utf-8 -*-
+
+# Brief description:
+# This script is an entry point for the pip package manager in the Python virtual environment.
+# It sets up the environment and invokes the pip command-line interface.
+
 import re
 import sys
 from pip._internal.cli.main import main
+
 if __name__ == '__main__':
+    # Modify the script name in sys.argv[0] to remove any extensions
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    
+    # Exit with the status code returned by the main function
     sys.exit(main())

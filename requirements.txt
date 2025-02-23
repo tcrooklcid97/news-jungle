@@ -1,18 +1,31 @@
+# AI and NLP Libraries
 anthropic>=0.46.0
 nltk>=3.9.1
 openai>=1.63.2
-pandas>=2.2.3
-plotly>=6.0.0
-psycopg2-binary>=2.9.9
-requests>=2.31.0
-streamlit>=1.42.0
-trafilatura>=2.0.0
-twilio>=9.4.1
 transformers==4.40.0
 torch==2.2.0
 torchvision>=0.17.0 
-tensorflow==2.14.0
+
+# Data Processing and Analysis
+pandas>=2.2.3
+
+# Visualization
+plotly>=6.0.0
+
+# Database
+psycopg2-binary>=2.9.9
+
+# HTTP Requests
+requests>=2.31.0
+
+# Web Framework
+streamlit>=1.42.0
+
+# Web Scraping
+trafilatura>=2.0.0
+
+# Communication
+twilio>=9.4.1
+
+# Protocol Buffers
 protobuf==3.20.3
-
-
-

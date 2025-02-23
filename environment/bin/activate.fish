@@ -1,8 +1,12 @@
 # This file must be used with "source <venv>/bin/activate.fish" *from fish*
 # (https://fishshell.com/); you cannot run it directly.
 
-function deactivate  -d "Exit virtual environment and return to normal shell environment"
-    # reset old environment variables
+# Brief description:
+# This script activates the Python virtual environment by setting up the necessary environment variables
+# and modifying the shell prompt. It also defines a `deactivate` function to revert the changes.
+
+function deactivate -d "Exit virtual environment and return to normal shell environment"
+    # Reset old environment variables
     if test -n "$_OLD_VIRTUAL_PATH"
         set -gx PATH $_OLD_VIRTUAL_PATH
         set -e _OLD_VIRTUAL_PATH
@@ -14,7 +18,7 @@ function deactivate  -d "Exit virtual environment and return to normal shell env
 
     if test -n "$_OLD_FISH_PROMPT_OVERRIDE"
         set -e _OLD_FISH_PROMPT_OVERRIDE
-        # prevents error when using nested fish instances (Issue #93858)
+        # Prevents error when using nested fish instances (Issue #93858)
         if functions -q _old_fish_prompt
             functions -e fish_prompt
             functions -c _old_fish_prompt fish_prompt
@@ -33,10 +37,11 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
+# Set up the virtual environment
 set -gx VIRTUAL_ENV /Users/Lenovo/Downloads/news_jungle_export/environment
 
 set -gx _OLD_VIRTUAL_PATH $PATH
-set -gx PATH "$VIRTUAL_ENV/"bin $PATH
+set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 
 # Unset PYTHONHOME if set.
 if set -q PYTHONHOME
@@ -45,7 +50,7 @@ if set -q PYTHONHOME
 end
 
 if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
-    # fish uses a function instead of an env var to generate the prompt.
+    # Fish uses a function instead of an env var to generate the prompt.
 
     # Save the current fish_prompt function as the function _old_fish_prompt.
     functions -c fish_prompt _old_fish_prompt
